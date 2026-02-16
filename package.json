@@ -48,6 +48,9 @@
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
 	"dependencies": {
+		"@polar-sh/better-auth": "^1.8.1",
+		"@polar-sh/sdk": "^0.42.5",
+		"@sveltejs/adapter-node": "^5.5.3",
 		"postgres": "^3.4.8"
 	}
 }

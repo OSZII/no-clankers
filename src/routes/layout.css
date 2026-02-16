@@ -1,3 +1,126 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 @plugin 'daisyui';
+
+/*
+ * COLOR PSYCHOLOGY — CONVERSION-OPTIMIZED
+ *
+ * Primary  (Orange)  → Action, urgency, CTA clicks. #1 conversion color.
+ * Secondary (Indigo) → Trust, authority, brand credibility.
+ * Accent   (Teal)    → Freshness, clarity, interactive elements.
+ * Error    (Red)     → Danger, "AI slop" — visceral rejection response.
+ * Success  (Green)   → Safety, "human-verified", trust checkmarks.
+ * Warning  (Amber)   → Caution, mid-range AI scores.
+ * Base     (Warm)    → Warm whites/grays increase approachability & time-on-page.
+ */
+
+/* ── No Clankers Light Theme (default) ── */
+@plugin "daisyui/theme" {
+  name: "noclankers";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  /* Warm white surfaces — approachable, not clinical */
+  --color-base-100: oklch(98.5% 0.005 85);
+  --color-base-200: oklch(95% 0.008 85);
+  --color-base-300: oklch(90% 0.01 85);
+  --color-base-content: oklch(22% 0.02 260);
+
+  /* Orange primary — high-energy CTA, urgency, action */
+  --color-primary: oklch(65% 0.2 50);
+  --color-primary-content: oklch(99% 0.005 50);
+
+  /* Deep indigo secondary — trust, authority, credibility */
+  --color-secondary: oklch(45% 0.18 270);
+  --color-secondary-content: oklch(98% 0.01 270);
+
+  /* Teal accent — fresh, modern, interactive highlights */
+  --color-accent: oklch(55% 0.14 195);
+  --color-accent-content: oklch(98% 0.01 195);
+
+  /* Warm dark neutral — softer than pure black */
+  --color-neutral: oklch(28% 0.015 260);
+  --color-neutral-content: oklch(96% 0.005 85);
+
+  /* Trust blue info */
+  --color-info: oklch(58% 0.16 245);
+  --color-info-content: oklch(98% 0.01 245);
+
+  /* Green success — "human verified", safety, trust checkmarks */
+  --color-success: oklch(55% 0.17 155);
+  --color-success-content: oklch(98% 0.01 155);
+
+  /* Amber warning — caution, attention */
+  --color-warning: oklch(72% 0.16 75);
+  --color-warning-content: oklch(18% 0.02 75);
+
+  /* Red error — danger, "AI slop", visceral rejection */
+  --color-error: oklch(55% 0.22 28);
+  --color-error-content: oklch(98% 0.01 28);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+
+  --depth: 1;
+  --noise: 0;
+}
+
+/* ── No Clankers Dark Theme (opt-in via data-theme="noclankers-dark") ── */
+@plugin "daisyui/theme" {
+  name: "noclankers-dark";
+  default: false;
+  prefersdark: false;
+  color-scheme: dark;
+
+  /* Dark warm surfaces */
+  --color-base-100: oklch(20% 0.015 260);
+  --color-base-200: oklch(16% 0.015 260);
+  --color-base-300: oklch(12% 0.015 260);
+  --color-base-content: oklch(92% 0.008 85);
+
+  /* Orange primary — even more vivid on dark */
+  --color-primary: oklch(72% 0.2 50);
+  --color-primary-content: oklch(18% 0.02 50);
+
+  /* Lighter indigo for dark mode readability */
+  --color-secondary: oklch(65% 0.18 270);
+  --color-secondary-content: oklch(98% 0.01 270);
+
+  /* Brighter teal on dark */
+  --color-accent: oklch(70% 0.14 195);
+  --color-accent-content: oklch(15% 0.02 195);
+
+  --color-neutral: oklch(30% 0.015 260);
+  --color-neutral-content: oklch(88% 0.008 85);
+
+  --color-info: oklch(68% 0.15 245);
+  --color-info-content: oklch(15% 0.02 245);
+
+  --color-success: oklch(68% 0.17 155);
+  --color-success-content: oklch(15% 0.02 155);
+
+  --color-warning: oklch(75% 0.16 75);
+  --color-warning-content: oklch(15% 0.02 75);
+
+  --color-error: oklch(65% 0.22 28);
+  --color-error-content: oklch(98% 0.01 28);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+
+  --depth: 1;
+  --noise: 0;
+}
