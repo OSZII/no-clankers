@@ -6,3 +6,4 @@ export const cache = pgTable('cache', {
 });
 
 export * from './auth.schema';
+export * from './subscription.schema';

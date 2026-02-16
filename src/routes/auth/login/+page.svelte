@@ -1,11 +1,15 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { authClient } from '$lib/auth-client';
 
 	let loading = $state(false);
 
+	const redirectParam = $derived(new URL(page.url).searchParams.get('redirect'));
+	const callbackURL = $derived(redirectParam === 'checkout' ? '/checkout' : '/dashboard');
+
 	async function signInWithGoogle() {
 		loading = true;
-		await authClient.signIn.social({ provider: 'google', callbackURL: '/dashboard' });
+		await authClient.signIn.social({ provider: 'google', callbackURL });
 	}
 </script>
 

@@ -91,7 +91,7 @@
 
 		<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
 			<!-- Orange CTA = highest-converting color. Large, shadow for depth. -->
-			<a href="/#pricing" class="btn px-8 text-lg shadow-lg btn-lg btn-primary">
+			<a href="/auth/login?redirect=checkout" class="btn px-8 text-lg shadow-lg btn-lg btn-primary">
 				Get No Clankers — $19.99/mo
 			</a>
 			<a href="#demo" class="btn text-lg text-base-content/60 btn-ghost btn-lg">
@@ -399,7 +399,7 @@
 				</ul>
 
 				<!-- Big orange CTA — the conversion moment -->
-				<a href="/auth/login" class="btn w-full max-w-xs text-lg shadow-lg btn-lg btn-primary">
+				<a href="/auth/login?redirect=checkout" class="btn w-full max-w-xs text-lg shadow-lg btn-lg btn-primary">
 					Get Started Now
 				</a>
 				<p class="mt-3 text-xs text-base-content/40">Secure checkout via Polar. Cancel anytime.</p>
@@ -498,7 +498,7 @@
 			Stop scrolling through AI-generated noise. Install No Clankers and get back to the internet
 			you actually want.
 		</p>
-		<a href="/auth/login" class="btn px-10 text-lg shadow-lg btn-lg btn-primary">
+		<a href="/auth/login?redirect=checkout" class="btn px-10 text-lg shadow-lg btn-lg btn-primary">
 			Get No Clankers — $19.99/mo
 		</a>
 		<p class="mt-4 text-sm text-base-content/40">
