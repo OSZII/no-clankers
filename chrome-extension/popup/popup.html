@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=320" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>No Clankers</title>
+</head>
+<body>
+  <div class="popup">
+    <!-- Loading state -->
+    <div id="state-loading" class="state">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Logged out state -->
+    <div id="state-logged-out" class="state hidden">
+      <div class="brand">No Clankers</div>
+      <p class="subtitle">AI-content firewall for Twitter/X</p>
+      <button id="btn-login" class="btn btn-primary">Sign in with Google</button>
+    </div>
+
+    <!-- No subscription state -->
+    <div id="state-no-sub" class="state hidden">
+      <div class="user-info" id="nosub-user-info">
+        <img id="nosub-avatar" class="avatar" src="" alt="avatar" />
+        <span id="nosub-name" class="user-name"></span>
+      </div>
+      <div class="alert alert-warning">
+        <span>Subscription required to use No Clankers.</span>
+      </div>
+      <a id="btn-subscribe" href="http://localhost:5173/#pricing" target="_blank" class="btn btn-primary">Subscribe</a>
+      <button id="btn-logout-nosub" class="btn btn-ghost btn-sm">Sign out</button>
+    </div>
+
+    <!-- Active state -->
+    <div id="state-active" class="state hidden">
+      <div class="user-info" id="active-user-info">
+        <img id="active-avatar" class="avatar" src="" alt="avatar" />
+        <div class="user-details">
+          <span id="active-name" class="user-name"></span>
+          <span class="badge badge-success">Active</span>
+        </div>
+      </div>
+
+      <div class="threshold-section">
+        <label class="threshold-label" for="threshold-slider">
+          Turing Threshold
+          <span id="threshold-value" class="threshold-value">50</span>
+        </label>
+        <input
+          type="range"
+          id="threshold-slider"
+          class="range"
+          min="0"
+          max="100"
+          value="50"
+        />
+        <div class="threshold-hints">
+          <span>Lenient</span>
+          <span>Strict</span>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-value" id="stat-scanned">0</span>
+          <span class="stat-label">Scanned</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="stat-muted">0</span>
+          <span class="stat-label">Muted</span>
+        </div>
+      </div>
+
+      <div class="active-badge">
+        <span class="dot"></span>
+        Active on Twitter/X
+      </div>
+
+      <button id="btn-logout" class="btn btn-ghost btn-sm">Sign out</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

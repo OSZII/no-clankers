@@ -5,7 +5,13 @@
 	let loading = $state(false);
 
 	const redirectParam = $derived(new URL(page.url).searchParams.get('redirect'));
-	const callbackURL = $derived(redirectParam === 'checkout' ? '/checkout' : '/dashboard');
+	const callbackURL = $derived(
+		redirectParam === 'extension'
+			? '/auth/extension-callback'
+			: redirectParam === 'checkout'
+				? '/checkout'
+				: '/dashboard'
+	);
 
 	async function signInWithGoogle() {
 		loading = true;

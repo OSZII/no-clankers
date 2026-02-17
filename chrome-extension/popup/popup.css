@@ -1,0 +1,278 @@
+/* ── Theme tokens (matches noclankers light theme) ── */
+:root {
+  --primary: oklch(65% 0.2 50);
+  --primary-content: oklch(99% 0.005 50);
+  --secondary: oklch(45% 0.18 270);
+  --accent: oklch(55% 0.14 195);
+  --base-100: oklch(98.5% 0.005 85);
+  --base-200: oklch(95% 0.008 85);
+  --base-300: oklch(90% 0.01 85);
+  --base-content: oklch(22% 0.02 260);
+  --base-content-muted: oklch(22% 0.02 260 / 0.6);
+  --success: oklch(55% 0.17 155);
+  --success-content: oklch(98% 0.01 155);
+  --warning: oklch(72% 0.16 75);
+  --warning-content: oklch(18% 0.02 75);
+  --error: oklch(55% 0.22 28);
+  --radius: 0.5rem;
+}
+
+/* ── Reset ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--base-100);
+  color: var(--base-content);
+  width: 320px;
+  min-height: 200px;
+}
+
+/* ── Layout ── */
+.popup {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ── Spinner ── */
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--base-300);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 32px auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Brand ── */
+.brand {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--base-content);
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: var(--base-content-muted);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-content);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--base-content-muted);
+}
+
+.btn-ghost:hover {
+  background: var(--base-200);
+}
+
+.btn-sm {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+}
+
+/* ── User info ── */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--base-300);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.badge-success {
+  background: var(--success);
+  color: var(--success-content);
+}
+
+/* ── Alert ── */
+.alert {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  width: 100%;
+  text-align: center;
+}
+
+.alert-warning {
+  background: var(--warning);
+  color: var(--warning-content);
+}
+
+/* ── Threshold slider ── */
+.threshold-section {
+  width: 100%;
+  padding: 8px 0;
+}
+
+.threshold-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.threshold-value {
+  background: var(--base-200);
+  padding: 2px 8px;
+  border-radius: var(--radius);
+  font-variant-numeric: tabular-nums;
+}
+
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--base-300);
+  outline: none;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  border: 2px solid var(--primary-content);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.threshold-hints {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: var(--base-content-muted);
+  margin-top: 4px;
+}
+
+/* ── Stats ── */
+.stats {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  justify-content: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  color: var(--base-content-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Active badge ── */
+.active-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--success);
+  font-weight: 500;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}

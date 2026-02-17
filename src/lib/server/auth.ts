@@ -1,6 +1,7 @@
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { sveltekitCookies } from 'better-auth/svelte-kit';
+import { bearer } from 'better-auth/plugins/bearer';
 import { polar, checkout, portal, webhooks } from '@polar-sh/better-auth';
 import { Polar } from '@polar-sh/sdk';
 import { env } from '$env/dynamic/private';
@@ -63,6 +64,7 @@ export const auth = betterAuth({
 		}
 	},
 	plugins: [
+		bearer(),
 		polar({
 			client: polarClient,
 			createCustomerOnSignUp: true,
