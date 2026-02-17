@@ -4,12 +4,10 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (event) => {
 	if (!event.locals.user) {
-		return redirect(302, '/auth/login?redirect=checkout');
+		return redirect(302, '/auth/login');
 	}
 
-	if (await hasActiveSubscription(event.locals.user.id)) {
-		return redirect(302, '/dashboard');
-	}
+	const active = await hasActiveSubscription(event.locals.user.id);
 
-	return {};
+	return { user: event.locals.user, subscriptionActive: active };
 };
